@@ -1,0 +1,50 @@
+<html>
+	<script type="text/javascript">
+		function start() {
+			document.getElementById("event_info").innerHTML = "Waiting for data...";
+			var deviceID = "55ff6f065075555341431787";
+			var accessToken = "5993c11b4db4e5a41967ed8c47d205093479c09f";
+			var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+
+			eventSource.addEventListener('open', function(e) {
+				console.log("Opened!"); },false);
+
+			eventSource.addEventListener('error', function(e) {
+				console.log("Errored!"); },false);
+
+			eventSource.addEventListener('doorstate', function(e) {
+				var parsedData = JSON.parse(e.data);
+				
+				var tempSpan = document.getElementById("event_info");
+				var tsSpan   = document.getElementById("time_stamp");
+				var doorImage = document.getElementById("door_image");
+				
+				var txt = "Core: " + parsedData.coreid + " Data: " + parsedData.data + ", " + "event received at " +  parsedData.published_at;
+				
+				tempSpan.innerHTML = txt;
+				tempSpan.style.fontSize = "9px";
+				
+				var doorsrc = "close.png";
+				
+				if(0 == parsedData.data){
+					doorsrc = "open.png";
+				}
+				
+				doorImage.src = "./images/" + doorsrc;
+			}, false);
+		}
+    </script>
+	<title>Remote Door Monitor</title>
+	<body onload="start()">
+		<h1>Remote Door Monitor using Spark Core and XBee</h1>
+		<p>This project uses XBee and Spark Core to monitor whether door is open/close using a Magnetic Contact Switch (Door Sensor). The Door Sensor is connected to a remote XBee on Pin 4 (DIO4). The Spark Core is connected to Coordinator XBee and monitor the remote door. The remote XBee is configured to send IO sample every second.</p>
+		<hr>
+		<table>
+			<tr>
+				<td><div><img id="door_image" src="./images/close.png"/></div></td>
+			</tr>
+		</table>
+		<hr>
+		<div id="event_info" style="text-align: right;"></div>
+	</body>
+</html>
