@@ -21,3 +21,5 @@ I am using XBee Library ported by @peekay123. The Spark Core continuously reads 
 
 
 **Demo Video**
+
+[Demo Video](https://www.youtube.com/watch?v=4aMyRsR0e3Y)
