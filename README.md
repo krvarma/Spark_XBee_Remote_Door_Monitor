@@ -13,11 +13,11 @@ I am using XBee Library ported by @peekay123. The Spark Core continuously reads 
 
 **Screehshots**
 
-[Spark Core and Coordinator XBee](https://raw.githubusercontent.com/krvarma/Spark_XBee_Remote_Door_Monitor/master/images/IMG_0158.JPG)
+![Spark Core and Coordinator XBee](https://raw.githubusercontent.com/krvarma/Spark_XBee_Remote_Door_Monitor/master/images/IMG_0158.JPG)
 
-[Remote XBee and Door Sensor](https://raw.githubusercontent.com/krvarma/Spark_XBee_Remote_Door_Monitor/master/images/IMG_0154.JPG)
+![Remote XBee and Door Sensor](https://raw.githubusercontent.com/krvarma/Spark_XBee_Remote_Door_Monitor/master/images/IMG_0154.JPG)
 
-[Web Page](https://raw.githubusercontent.com/krvarma/Spark_XBee_Remote_Door_Monitor/master/images/webpage.png)
+![Web Page](https://raw.githubusercontent.com/krvarma/Spark_XBee_Remote_Door_Monitor/master/images/webpage.png)
 
 
 **Demo Video**
